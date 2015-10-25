@@ -1,0 +1,24 @@
+{
+  "name": "demo1",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isghost/plum.git"
+  },
+  "keywords": [
+    "nodejs",
+    "crawler",
+    "superagent"
+  ],
+  "author": "isghost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isghost/plum/issues"
+  },
+  "homepage": "https://github.com/isghost/plum#readme"
+}
