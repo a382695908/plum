@@ -78,6 +78,7 @@
 
 ## 运行方式
 **注意，运行环境为windows,mac和linux可能存在兼容性问题**
+
 1. ```git clone https://github.com/isghost/plum```
 2. ```cd .\plum\demo1```
 3. ```npm i```
