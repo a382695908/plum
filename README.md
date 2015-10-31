@@ -7,8 +7,16 @@
 ## demo列表
 
 *  demo1: [《淘宝搜索结果收集篇1》](https://github.com/isghost/plum/tree/master/demo1)
-*  demo2:《淘宝搜索结果收集篇2(未上传)》
+*  demo2: [《淘宝搜索结果收集篇2》](https://github.com/isghost/plum/tree/master/demo2)
+*  deom2: 《京东商城搜索结果收集篇（未上传）》
+
+## 作者信息
+邮箱：810278677@qq.com  
+博客：<www.ccyblog.com>
 
 ## 相关推荐(不是随便加的 -_-!)
 
 * nodejs入门教程:[Node.js 包教不包会](https://github.com/alsotang/node-lessons)
+
+## License
+MIT
