@@ -1,0 +1,29 @@
+{
+  "name": "demo3",
+  "version": "0.0.1",
+  "description": "京东店铺商品信息收集",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isghost/plum.git"
+  },
+  "keywords": [
+    "nodejs",
+    "jingdong",
+    "crawler"
+  ],
+  "author": "isghost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isghost/plum/issues"
+  },
+  "homepage": "https://github.com/isghost/plum#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "cheerio": "^0.19.0",
+    "superagent": "^1.4.0"
+  }
+}
