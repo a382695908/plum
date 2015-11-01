@@ -8,7 +8,7 @@
 
 *  demo1: [《淘宝搜索结果收集篇1》](https://github.com/isghost/plum/tree/master/demo1)
 *  demo2: [《淘宝搜索结果收集篇2》](https://github.com/isghost/plum/tree/master/demo2)
-*  deom2: [《京东商城店铺商品全收集》](https://github.com/isghost/plum/tree/master/demo3)
+*  deom3: [《京东商城店铺商品全收集》](https://github.com/isghost/plum/tree/master/demo3)
 
 ## 作者信息
 邮箱：810278677@qq.com  
