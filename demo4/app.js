@@ -17,7 +17,7 @@ var languages =
 //平台
   "Android","iOS","WP"];
 
-
+//数据来源  拉勾网
 var requests = [];
 for(var i=0;i<citys.length;i++){
   var url = "http://www.lagou.com/jobs/positionAjax.json?px=new&city=" + urlencode(citys[i]);
@@ -58,7 +58,6 @@ function getData(request,callback){
 async.mapLimit(requests,2,function(request,callback){
   getData(request,callback);
 },function(err,result){
-//  console.log(result);
   fs.writeFile("jobCount.txt",JSON.stringify(result));
 });
 
