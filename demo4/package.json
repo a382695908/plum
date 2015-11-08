@@ -1,0 +1,27 @@
+{
+  "name": "demo4",
+  "version": "0.0.1",
+  "description": "抓取拉勾网数据",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isghost/plum.git"
+  },
+  "keywords": [
+    "工作"
+  ],
+  "author": "isghost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isghost/plum/issues"
+  },
+  "homepage": "https://github.com/isghost/plum#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "superagent": "^1.4.0",
+    "urlencode": "^1.1.0"
+  }
+}
