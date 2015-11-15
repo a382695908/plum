@@ -1,6 +1,6 @@
 # 《拉勾网岗位信息获取2--岗位详细信息》
 ## 实现目标
-将拉勾网上，所有岗位的信息抓取下来。由于岗位大于30页后，拉勾网不再显示，我也将忽略30页以后的内容
+将拉勾网上，所有岗位的信息抓取下来。由于岗位大于30页后，拉勾网不再显示，我也将忽略30页以后的内容。将抓取到的数据保存到mongodb。
 ## 任务分析
 在demo4取得岗位数量的基础上，计算显示的页数，生成第二轮请求的参数
 
@@ -14,7 +14,11 @@
 与demo4相比，主要增加了```startSecondRequest```和```getJobInfo```两个函数，以及```myurl```代码块。岗位信息存放的位置：```res.body.content.result```
   
 ## 结果示例
-可以查看当前目录下的jobs.txt或者jobs.csv(csv文件只存放了北京，C++的450个岗位)
+可以查看当前目录下jobs.csv(csv文件只存放了北京，C++的450个岗位)或者mongodb(Lagou.zip是mongodb的压缩包,岗位数量2w+，收集时间为2015/11/15)。
+### 查看mongodb方法
+1. [安装mongodb](https://www.mongodb.org/),并添加到```path```
+2. 运行数据库 ```>mongod --dbpath LagouPath```,其中LagouPath指Lagou.zip的解压目录
+3. 打开新的```cmd```,```>mongo```,```>db.jobs.find()```
 
   	[{
       "positionId": 790491,
@@ -101,6 +105,7 @@
 * [superagent](https://github.com/visionmedia/superagent)
 * [async](https://github.com/caolan/async)
 * [urlencode](https://github.com/node-modules/urlencode)
+* [mongodb](https://docs.mongodb.org/getting-started/node/client/)
 
 ## 运行方式
 **注意，运行环境为windows,mac和linux可能存在兼容性问题**
