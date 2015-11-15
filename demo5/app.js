@@ -3,13 +3,14 @@ var async = require("async");
 var urlencode = require("urlencode");
 var fs = require("fs");
 var myurl = require("./myurl");
+var mongodb = require("./mongodb");
 
 //未使用数据库，txt不好保存大量数据，只抓取部分岗位
 var citys = 
   ["北京","上海","深圳","广州","杭州","成都","南京","武汉","西安","厦门","长沙","苏州","天津","重庆","郑州",
   "青岛","合肥","福州","济南","大连","珠海","无锡","佛山","东莞","宁波","常州","沈阳","石家庄","昆明","南昌",
   "南宁","哈尔滨","海口","中山","惠州","贵阳","长春","太原","嘉兴","泰安","昆山","烟台","兰州","泉州"];
-citys= ["北京","杭州"];
+
 
 var languages =
 //语言
@@ -19,7 +20,6 @@ var languages =
 //平台
   "Android","iOS","WP"];
 
-  languages = ["Python","U3D"];
 
 //数据来源  拉勾网
 var baseUrl = "http://www.lagou.com/jobs/positionAjax.json?px=new&city=";
@@ -45,7 +45,6 @@ function getData(request,callback){
     .post(request.url)
     .send(request.params)
     .end(function(err,res){
-      var json = JSON.parse(res.text);
       var postParams = myurl.decodeParams(request.params);
       var getParams = myurl.decodeParams(request.url);
       var language = postParams.kd;
@@ -86,12 +85,21 @@ function startSecondRequest(){
     getJobInfo(params,callback);
   },function(err,result){
       var jobs = [];
+      var keys = {};
+      var repeatKeys = [];
       for(var i in result){
         for (var j in result[i]){
+          if(typeof keys[result[i][j]["_id"]] != "undefined"){
+            repeatKeys.push(result[i][j]["_id"]);
+            continue;
+          }
+          keys[result[i][j]["_id"]] = true;
           jobs.push(result[i][j]);
         }
       }
-      fs.writeFile("jobs.txt",JSON.stringify(jobs));
+      console.log("重复岗位数量 ：" + repeatKeys.length); 
+      console.log("未重复岗位数量 ：" + jobs.length); 
+      mongodb.insert(jobs);
   });
 }
 
@@ -101,10 +109,10 @@ function getJobInfo(params,callback){
     .send(myurl.encodeParams(params,"pn","kd","first"))
     .end(function(err,res){
       var language = params.kd;
-      var city = params.city;
       var jobs = res.body.content.result;
       for(var k in jobs){
         jobs[k]["language"] = language;
+        jobs[k]["_id"] = jobs[k].positionId;//将postionId作为保存在数据库中的primary key
       }
       callback(null,jobs);
       finishedCnt ++;

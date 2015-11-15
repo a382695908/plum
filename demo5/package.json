@@ -21,6 +21,7 @@
   "homepage": "https://github.com/isghost/plum#readme",
   "dependencies": {
     "async": "^1.5.0",
+    "mongodb": "^2.0.48",
     "superagent": "^1.4.0",
     "urlencode": "^1.1.0"
   }
