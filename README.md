@@ -11,6 +11,16 @@
 *  demo3: [《京东商城店铺商品全收集》](https://github.com/isghost/plum/tree/master/demo3)
 *  demo4: [《拉勾网岗位信息获取1--岗位数量》](https://github.com/isghost/plum/tree/master/demo4)
 *  demo5: [《拉勾网岗位信息获取2--岗位详细信息》](https://github.com/isghost/plum/tree/master/demo5)
+*  demo6: [《模拟百度登录》](https://github.com/isghost/plum/tree/master/demo6)
+
+## demo说明
+
+* demo1: 简单的字符串解析
+* demo2: 利用phamtoJs库执行JS，用cheeriot选中目标
+* demo3: 请求太快，被当作爬虫了(好吧，实际就是爬虫),加async控制请求数
+* demo4: 查找加载数据的url请求，直接得到json格式数据
+* demo5: 大量数据用moongodb保存
+* demo6: 使用rsa加密密码，模拟百度登录
 
 ##运行方式
 
