@@ -1,0 +1,29 @@
+{
+  "name": "demo7",
+  "version": "0.0.1",
+  "description": "zhi hu images",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isghost/plum.git"
+  },
+  "keywords": [
+    "crawler",
+    "zhihu"
+  ],
+  "author": "isghost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isghost/plum/issues"
+  },
+  "homepage": "https://github.com/isghost/plum#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "node-xlsx": "^0.6.0",
+    "superagent": "^1.7.2"
+  }
+}
