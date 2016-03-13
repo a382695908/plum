@@ -13,6 +13,7 @@
 *  demo5: [《拉勾网岗位信息获取2--岗位详细信息》](https://github.com/isghost/plum/tree/master/demo5)
 *  demo6: [《模拟百度登录》](https://github.com/isghost/plum/tree/master/demo6)
 *  demo7: [《知乎页面的图片抓取1》](https://github.com/isghost/plum/tree/master/demo7)
+*  demo8: [豆瓣美女图片抓取](https://github.com/isghost/plum/tree/master/demo8)
 
 ## demo说明
 
@@ -23,6 +24,7 @@
 * demo5: 大量数据用moongodb保存
 * demo6: 使用rsa加密密码，模拟百度登录
 * demo7: 抓取简单图片
+* demo8: 抓取简单图片
 
 ##运行方式
 

@@ -1,0 +1,27 @@
+{
+  "name": "demo6",
+  "version": "0.0.1",
+  "description": "登录爬虫",
+  "main": "app.js",
+  "scripts": {
+    "test": "start app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isghost/plum.git"
+  },
+  "keywords": [
+    "百度"
+  ],
+  "author": "isghost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isghost/plum/issues"
+  },
+  "homepage": "https://github.com/isghost/plum#readme",
+  "dependencies": {
+    "superagent": "^1.4.0",
+    "urlencode": "^1.1.0",
+    "zombie": "^4.2.1"
+  }
+}

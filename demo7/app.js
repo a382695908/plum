@@ -49,13 +49,14 @@ function getImageUrls(url){
       $("img").each(function(idx,element){
         var $element = $(element);
         var url = $element.attr("src");
-        if (url.length <= 0){
+        if (url && url.length <= 0 || !url){
           return ;
         }
 
+        console.log(md5Str,url);
+
         var md5Str = crypto.createHash("md5").update(url).digest("hex");
         imageUrls[md5Str] = url;
-        console.log(md5Str,url);
       });
       getAllImage();
     });
@@ -72,4 +73,4 @@ function getAllImage(){
   });
 }
 
-getImageUrls("http://www.zhihu.com/question/38264716")
+getImageUrls("http://v3.bootcss.com/components/")
