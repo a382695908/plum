@@ -4,76 +4,13 @@ var cheerio = require("cheerio");
 var async = require("async");
 var fs = require("fs");
 var crypto = require("crypto");
+var mongodb = require("./mongodb");
 
-// function crawlerImage(imageUrl,savePath,callback){
-//   var name = imageUrl.match(/[^\/$]*$/)[0];
-//   if(!savePath){
-//     var cwd = process.cwd();
-//     savePath = cwd + "/images/" + name;
-//     if(!checkExistDir){
-//       checkExistDir = true
-//       if(!fs.existsSync(cwd + "/images")){
-//         fs.mkdirSync(cwd + "/images");
-//       }
-//     }
-//   }
-  
-//   if (!(/^http:/.test(imageUrl) || /^https:/.test(imageUrl))){
-//     imageUrl = "http:"+imageUrl;
-//   }
-//   request.get(imageUrl)
-//   .end(function(err,res){
-//     if(err){
-//       console.log(err,imageUrl);
-//       callback(null,false);
-//       return ;
-//     }
-//     console.log(savePath);
-//     fs.writeFile(savePath,res.body);
-//     callback(null,true);
-//   });
-// }
 
-// function getImageUrls(url){
-//   request.get(url)
-//     .end(function(err,res){
-//       if(err){
-//         console.log(err);
-//         return 
-//       }
-//       var $ = cheerio.load(res.text);
-//       $("img").each(function(idx,element){
-//         var $element = $(element);
-//         var url = $element.attr("src");
-//         if (url && url.length <= 0 || !url){
-//           return ;
-//         }
-
-//         console.log(md5Str,url);
-
-//         var md5Str = crypto.createHash("md5").update(url).digest("hex");
-//         imageUrls[md5Str] = url;
-//       });
-//       getAllImage();
-//     });
-// }
-
-// function getAllImage(){
-//   async.mapLimit(imageUrls, 5, function (url, callback) {
-//     //fetchUrl(url, callback);
-//     console.log(url);
-//     crawlerImage(url,null,callback);
-//   }, function (err, result) {
-//     console.log('final:');
-//     console.log(result);
-//   });
-// }
-
-// getImageUrls("http://v3.bootcss.com/components/")
 var basePageUrl = "http://www.dbmeinv.com/?pager_offset=";
 var pageUrls = [];
 var imageUrls = [];
-var pageNum = 10;
+var pageNum = 1;
 // 记录是否判断过Images这个文件目录是否存在过
 var checkExistDir = false;
 
@@ -126,6 +63,7 @@ function dealPageUrl(url,callback){
           return 
         }
         var $ = cheerio.load(res.text);
+        console.log(res.text);
         $(".thumbnails > li img").each(function(idx,element){
           var $element = $(element);
           var imageUrl = $element.attr("src");
@@ -141,6 +79,7 @@ function dealPageUrl(url,callback){
 
 function getImageUrls(){
   async.mapLimit(pageUrls, 1, function (url, callback) {
+    console.log("deal url : ",url);
     dealPageUrl(url,callback);
   }, function (err, result) {
     getImages();
